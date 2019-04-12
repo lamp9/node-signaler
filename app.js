@@ -20,7 +20,7 @@ const app = uWS./*SSL*/App({
     open: (ws, req) => {
         let id = utils.getQuery(req.getQuery(), 'id');
         ws.id = id;
-        // console.log('A WebSocket connected via URL: ' + req.getUrl() + '!');
+        console.log('A WebSocket connected via URL: ' + req.getUrl() + '!');
         handlers.handleJoin(ws, hub);
     },
     message: (ws, message, isBinary) => {
@@ -45,11 +45,11 @@ const app = uWS./*SSL*/App({
 
     },
     drain: (ws) => {
-        // console.log('WebSocket backpressure: ' + ws.getBufferedAmount());
+        console.log('WebSocket backpressure: ' + ws.getBufferedAmount());
     },
     close: (ws, code, message) => {
 
-        // console.log(ws.id + ' leave');
+        console.log(ws.id + ' leave');
 
         handlers.handleLeave(ws, hub);
     }
