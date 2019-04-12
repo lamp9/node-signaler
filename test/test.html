@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ws = new WebSocket("ws://localhost:9002/?id=123")
+
+    ws.onopen = function () {
+        console.log("open")
+
+        ws.send("hahaha")
+
+    }
+
+    ws.onclose = function () {
+        console.log("close")
+
+    }
+
+    ws.onmessage = function (e) {
+        console.log(JSON.stringify(e.data))
+
+    }
+
+</script>
+</body>
+</html>

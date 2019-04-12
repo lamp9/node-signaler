@@ -1,0 +1,23 @@
+{
+  "name": "node-signaler",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "uWebSockets.js": "^15.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webrtc",
+    "signaling",
+    "nodejs",
+    "websocket",
+    "p2p",
+    "cdnbye"
+  ],
+  "author": "cdnbye",
+  "license": "MIT"
+}
