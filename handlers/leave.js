@@ -1,8 +1,9 @@
 
 module.exports = (ws, hub) => {
 
-    let client = hub.get(ws.id);
+    let client = hub.getClient(ws.id);
     hub.remove(ws.id);
-    client.destroy();
-
+    if (client) {
+        client.destroy();
+    }
 };

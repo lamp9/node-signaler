@@ -18,9 +18,13 @@ const app = uWS.SSLApp({
     // idleTimeout: 10,
     /* Handlers */
     open: (ws, req) => {
+        console.log('A WebSocket connected via URL: ' + req.getUrl() + '!');
         let id = utils.getQuery(req.getQuery(), 'id');
+        if (id == null) {
+            return
+        }
         ws.id = id;
-        // console.log('A WebSocket connected via URL: ' + req.getUrl() + '!');
+
         handlers.handleJoin(ws, hub);
     },
     message: (ws, message, isBinary) => {

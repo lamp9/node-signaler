@@ -15,7 +15,7 @@ module.exports = class  {
         return true
     }
 
-    get(id) {
+    getClient(id) {
         if (this._hub.has(id)) {
             return this._hub.get(id)
         }

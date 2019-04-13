@@ -9,7 +9,6 @@ Node.js 10.x or 11.x is required.
 
 ```sh
 npm install
-npm run start
 ```
 
 ## Run instructions
