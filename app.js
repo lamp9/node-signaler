@@ -8,7 +8,7 @@ const Hub = require('./hub');
 
 const hub = new Hub();
 
-const app = uWS./*SSL*/App({
+const app = uWS.SSLApp({
     key_file_name: config.keyFileName,
     cert_file_name: config.certFileName,
 }).ws('/*', {
