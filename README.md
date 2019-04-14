@@ -9,12 +9,13 @@ Node.js 10.x or 11.x is required.
 
 ```sh
 npm install
+npm install -g pm2
 ```
 
 ## Run instructions
 
 ```sh
-npm run start
+pm2 start app.js -n signaler
 ```
 
 ## Configuration
