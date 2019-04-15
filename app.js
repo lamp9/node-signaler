@@ -60,6 +60,7 @@ const app = uWS.SSLApp({
 }).any('/*', (res, req) => {
     res.end('Nothing to see here!');
 }).get('/count', (res, req) => {
+    res.writeHeader('Access-Control-Allow-Origin', '*');
     res.end(hub.count + '');
 })
     .listen(config.port, (token) => {
