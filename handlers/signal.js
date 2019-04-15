@@ -7,10 +7,12 @@ module.exports = (ws, msg, hub) => {
     let peerClient = hub.getClient(toPeerId);
     if (!peerClient) {
         // console.log('peer not found');
-        client.send({
-            action: 'signal',
-            from_peer_id: toPeerId,
-        })
+        if (client) {
+            client.send({
+                action: 'signal',
+                from_peer_id: toPeerId,
+            })
+        }
     } else {
         peerClient.send({
             action: 'signal',
