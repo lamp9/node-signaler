@@ -65,7 +65,7 @@ const app = uWS.SSLApp({
 })
     .listen(config.port, (token) => {
     if (token) {
-        console.log('Listening to port ' + config.port);
+        console.log('Listening to port ' + config.port + " "  + new Date());
     } else {
         console.log('Failed to listen to port ' + config.port);
     }
