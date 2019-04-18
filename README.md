@@ -8,7 +8,7 @@ High-performance signaling server for [hlsjs-p2p-engine](https://github.com/cdnb
 Node.js 10.x or 11.x is required.
 
 ```sh
-npm install
+npm install uNetworking/uWebSockets.js#v15.9.0
 npm install -g pm2
 ```
 
