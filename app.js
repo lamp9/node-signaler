@@ -15,7 +15,7 @@ const app = uWS.SSLApp({
     /* Options */
     compression: 0,
     maxPayloadLength: config.maxPayloadLength,
-    // idleTimeout: 10,
+    idleTimeout: 3600,
     /* Handlers */
     open: (ws, req) => {
         // console.log('A WebSocket connected via URL: ' + req.getUrl() + '!');
