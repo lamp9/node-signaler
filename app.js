@@ -6,16 +6,30 @@ const utils = require('./utils');
 const handlers = require('./handlers');
 const Hub = require('./hub');
 
-const hub = new Hub();
-
-const app = uWS.SSLApp({
+const appOptions = {
     key_file_name: config.keyFileName,
     cert_file_name: config.certFileName,
-}).ws('/*', {
+};
+
+const hub = new Hub();
+
+let app;
+
+if (appOptions.key_file_name === undefined) {
+    app = uWS.App({
+        ...appOptions
+    })
+} else {
+    app = uWS.SSLApp({
+        ...appOptions
+    })
+}
+
+app.ws('/*', {
     /* Options */
     compression: 0,
     maxPayloadLength: config.maxPayloadLength,
-    idleTimeout: 3600,
+    // idleTimeout: 3600,
     /* Handlers */
     open: (ws, req) => {
         // console.log('A WebSocket connected via URL: ' + req.getUrl() + '!');
